@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class TurretPew : MonoBehaviour
 {
+	/*
+	Turret automatically detects asteroid every 0.5f
+	It finds the closest asteroid and makes it its target
+	It rotates towards the target and shoots a laser
+	*/
     public GameObject laser;
 	public float FireInterval = 2.5f; //Time in between shoot
 	public Transform target; //can make this private later on
 	public float range = 5.0f; //range of the turret
-	public string enemyTag;
+	public string enemyTag;   // in unity change this tag to Astroid
 	
 	
 	float cooldownTimer=0;
@@ -56,7 +61,7 @@ public class TurretPew : MonoBehaviour
     void Update()
     {
 	    cooldownTimer -= Time.deltaTime;
-		if (target!=null && cooldownTimer <=0){ //When there exists a target and the cooldownTimer as reached 0
+		if (target!=null && cooldownTimer <=0){ //When there exists a target and the cooldownTimer as reached 0, turret rotates and shoots laser
 		   
 			//Debug.Log("release laser");
 			Vector3 direction= target.position- transform.position; //Records the vector between turret and target

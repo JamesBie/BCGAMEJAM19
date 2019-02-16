@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+	/*
+		Laser goes straight
+		Once it hits something that is a enermy, it is destroyed
+	*/
 	public float speed;
-	public GameObject gun; //where the laser came from
+	public float timer=90f;
     // Update is called once per frame
     void Update()
     {
@@ -14,13 +18,17 @@ public class Laser : MonoBehaviour
 		Vector3 velocity = new Vector3(0,speed,0); //need to change velocity according to direction of triangle later
 		pos += transform.rotation * velocity;
 		transform.position=pos;
+		timer-=Time.deltaTime;
+		if (timer<=0){
+			Destroy(gameObject);
+		}
     }
 	
 	void OnTriggerEnter2D(Collider2D other) //other is the other collider that we touch
 	{
 	
 		//Destroy(other.gameObject); This destroys the other game object, its assets and all of its children
-		if (other.gameObject.CompareTag("Rock")){ //Tag is defined in Unity
+		if (other.gameObject.CompareTag("Rock")){ //Tag is defined in Unity <-------------------------------------
 			Debug.Log("rock + laser trigger");
 			Destroy(other.gameObject);//destroy rock
 			Destroy(gameObject); //Also destroy laser

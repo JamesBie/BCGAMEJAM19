@@ -27,7 +27,7 @@ public class TurretPew : MonoBehaviour
 		
 		
 		Collider2D[] ObjectsInRange = Physics2D.OverlapCircleAll(transform.position,range); //list of colliders of all objects within range of turret
-		Debug.Log(ObjectsInRange.Length);
+		//Debug.Log(ObjectsInRange.Length);
 		
 		if (ObjectsInRange.Length>=1){
 			//Debug.Log("ObjectsInRange.Length>=1");
@@ -43,21 +43,35 @@ public class TurretPew : MonoBehaviour
 				}
 			}
 			if (bestCollider != null){
-				Debug.Log("target changed");
+				//Debug.Log("target changed");
 			//update target to be enemy
 				target= bestCollider.transform;
+			}
+			else {
+				target= null;
 			}
 		}
 	}
     // Update is called once per frame
     void Update()
     {
-	   cooldownTimer -= Time.deltaTime;
-	   if (target!=null && cooldownTimer <=0){ //Fire1 is space, when hold down space and timer reaches 0
-		   cooldownTimer=FireInterval;
-		   Debug.Log("release laser");
-		   Instantiate(laser,transform.position,transform.rotation); //creates copy of gameobject prefab at position with orientation
-	   }
+	    cooldownTimer -= Time.deltaTime;
+		if (target!=null && cooldownTimer <=0){ //When there exists a target and the cooldownTimer as reached 0
+		   
+			//Debug.Log("release laser");
+			Vector3 direction= target.position- transform.position; //Records the vector between turret and target
+			//Debug.Log(direction);
+			Quaternion lookRotation= Quaternion.LookRotation(direction); // loopRotation is the amount of rotation needed for the turret to reach the object
+			//Debug.Log(lookRotation);
+			//Rotate turret by lookRotation
+			Vector3 vectorRotate = lookRotation.eulerAngles;
+			Debug.Log(vectorRotate);
+			transform.rotation= Quaternion.Euler(vectorRotate.x,vectorRotate.y,0.0f); //turret is rotated by this vector
+			//Debug.Log(transform.rotation);
+			Instantiate(laser,transform.position,transform.rotation); //creates copy of gameobject prefab at position with orientation
+			cooldownTimer=FireInterval; //reset cooldown timer
+	    }
+	   
     }
 	void OnDrawGizmosSelected(){ //draws range of turret
 	    Gizmos.color = Color.red;

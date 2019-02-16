@@ -121,8 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 156813727}
-  - component: {fileID: 156813726}
   - component: {fileID: 156813724}
+  - component: {fileID: 156813725}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -147,7 +147,7 @@ MonoBehaviour:
   target: {fileID: 0}
   range: 5
   enemyTag: Rock
---- !u!212 &156813726
+--- !u!212 &156813725
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa9114b92cd3b4240acdad64f73173cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39e34fb2a4a611947afbfa2899de2da3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -358,12 +358,12 @@ PrefabInstance:
     - target: {fileID: 1204629163547110137, guid: 907df1f86fa8ad746b23cd6fd6745b92,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.14
+      value: 1.28
       objectReference: {fileID: 0}
     - target: {fileID: 1204629163547110137, guid: 907df1f86fa8ad746b23cd6fd6745b92,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.73
+      value: 7.55
       objectReference: {fileID: 0}
     - target: {fileID: 1204629163547110137, guid: 907df1f86fa8ad746b23cd6fd6745b92,
         type: 3}
@@ -409,6 +409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204629163547110139, guid: 907df1f86fa8ad746b23cd6fd6745b92,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 907df1f86fa8ad746b23cd6fd6745b92, type: 3}

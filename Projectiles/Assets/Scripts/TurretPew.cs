@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretPew : MonoBehaviour
-{/*
+{
     public GameObject laser;
 	public float FireInterval = 1f; //Time in between shoot
 	public Transform target; //can make this private later on
 	public float range = 5f; //range of the turret
 	public string enemyTag;
 	float cooldownTimer=0;
-	
+	bool EnemiesFound= false;
     // Start is called before the first frame update
     void Start()
     { 
@@ -29,7 +29,7 @@ public class TurretPew : MonoBehaviour
     void Update()
     {
 	   cooldownTimer -= Time.deltaTime;
-	   if (Input.GetButton("Fire1") && cooldownTimer <=0){ //Fire1 is space, when hold down space and timer reaches 0
+	   if (EnemiesFound && cooldownTimer <=0){ //Fire1 is space, when hold down space and timer reaches 0
 		   cooldownTimer=FireInterval;
 		   Debug.Log("release laser");
 		   Instantiate(laser,transform.position,transform.rotation); //creates copy of gameobject prefab at position with orientation
@@ -38,6 +38,6 @@ public class TurretPew : MonoBehaviour
 	void OnDrawGizmosSelected(){ //draws range of turret
 	    Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position,range);
-	}*/
+	}
 	
 }

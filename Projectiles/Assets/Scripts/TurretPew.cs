@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretPew : MonoBehaviour
 {
     public GameObject laser;
-	public float FireInterval = 1f; //Time in between shoot
+	public float FireInterval = 2.5f; //Time in between shoot
 	public Transform target; //can make this private later on
 	public float range = 5.0f; //range of the turret
 	public string enemyTag;
@@ -60,14 +60,9 @@ public class TurretPew : MonoBehaviour
 		   
 			//Debug.Log("release laser");
 			Vector3 direction= target.position- transform.position; //Records the vector between turret and target
-			//Debug.Log(direction);
-			Quaternion lookRotation= Quaternion.LookRotation(direction); // loopRotation is the amount of rotation needed for the turret to reach the object
-			//Debug.Log(lookRotation);
-			//Rotate turret by lookRotation
-			Vector3 vectorRotate = lookRotation.eulerAngles;
-			Debug.Log(vectorRotate);
-			transform.rotation= Quaternion.Euler(vectorRotate.x,vectorRotate.y,0.0f); //turret is rotated by this vector
-			//Debug.Log(transform.rotation);
+			float angle = Mathf.Atan2(-direction.x,direction.y) * Mathf.Rad2Deg; //use tangent to find angle subtended by (x,y)
+			transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));//Turn this into an angle rotation in z axis
+			
 			Instantiate(laser,transform.position,transform.rotation); //creates copy of gameobject prefab at position with orientation
 			cooldownTimer=FireInterval; //reset cooldown timer
 	    }

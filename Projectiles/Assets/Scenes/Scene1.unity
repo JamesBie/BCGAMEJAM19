@@ -140,7 +140,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &156813723
 GameObject:
@@ -237,7 +237,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &395306699
 GameObject:
@@ -269,7 +269,7 @@ Transform:
   - {fileID: 543189354}
   - {fileID: 1290666541}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -379,18 +379,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1561323355708100540}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &909505444 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1563183587078071188, guid: 784f1ca6b74a20740a5657ddea737e0d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1561323355708100540}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909505442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &909505445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +393,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: {fileID: 0}
+--- !u!1 &986348943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986348945}
+  - component: {fileID: 986348944}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &986348944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986348943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc0dea2994605b45b68902bfce90c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: 3403350a94951ee42bcd4a5166e22ba5, type: 3}
+    volume: 0.388
+    loop: 1
+    source: {fileID: 0}
+  - name: turrent
+    clip: {fileID: 8300000, guid: a2092d5422d6a3c4c8232f05c7e3bce6, type: 3}
+    volume: 0.322
+    loop: 0
+    source: {fileID: 0}
+  - name: pshoot
+    clip: {fileID: 8300000, guid: 2c12830404e9f60418a8522f04a22df6, type: 3}
+    volume: 0.322
+    loop: 0
+    source: {fileID: 0}
+  - name: tshoot
+    clip: {fileID: 8300000, guid: 24202f94851688e4e963ac0f3f52fecc, type: 3}
+    volume: 0.322
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &986348945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986348943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1290666540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,28 +586,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1783593333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6518624300264722508, guid: 784f1ca6b74a20740a5657ddea737e0d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1561323355708100540}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1783593334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783593333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc4cf01b3aea4caa84cb09c9c4bd0b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: {fileID: 909505444}
 --- !u!1001 &1204629164081890195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -695,7 +727,7 @@ PrefabInstance:
     - target: {fileID: 1561323354468998840, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1561323354468998840, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}

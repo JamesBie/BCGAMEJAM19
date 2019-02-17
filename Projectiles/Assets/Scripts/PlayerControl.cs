@@ -59,14 +59,14 @@ public class PlayerControl : MonoBehaviour
 		if (rb2d.angularVelocity < 35.0&&rb2d.angularVelocity>-35.0){
 			rb2d.AddTorque(rotate*-1);
 		}
-		//void OnTriggerEnter(Collider other) //other is the other collider that we touch
-	//{
-		//Destroy(other.gameObject); //This destroys the other game object, its assets and all of its children
-		/*if (other.gameObject.CompareTag("Pick Up")){ //Tag is defined in Unity
+		void OnTriggerEnter(Collider other) //other is the other collider that we touch
+	{
+		Destroy(other.gameObject); //This destroys the other game object, its assets and all of its children
+		if (other.gameObject.CompareTag("Rock")){ //Tag is defined in Unity
 			
-			other.gameObject.SetActive(false);//deactivate pickup object
+			Destroy(other.gameObject);
 			
-		}*/
-   // }
+		}
+    }
 	}
 }

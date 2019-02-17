@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-	void OnTriggerEnter(Collider other) //other is the other collider that we touch
+	void OnTriggerEnter2D(Collider2D other) //other is the other collider that we touch
 	{
 		//Destroy(other.gameObject); This destroys the other game object, its assets and all of its children
 		if (other.gameObject.CompareTag("Rock")){ //Tag is defined in Unity

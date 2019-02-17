@@ -24,15 +24,6 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    	//change logic to players health when time is right
-    	if (Input.GetKeyDown (KeyCode.A) && currentHealth.value < 100){
-    		currentHealth.value += 10;
-    	}
-
-    	if (Input.GetKeyDown (KeyCode.S) && currentHealth.value >0){
-    		currentHealth.value -= 10;
-    	}
         
     }
 

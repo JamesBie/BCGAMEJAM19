@@ -33,7 +33,7 @@ public class PlayerControl : MonoBehaviour
         rb2d.AddForce(movement * max_speed);
 		*/
 		
-		if (Input.GetKey (KeyCode.W)){
+		if (Input.GetKey (KeyCode.W) || Input.GetKey("up")){
     		m_SpriteRenderer.sprite =m_Sprite;
     	}else if(m_SpriteRenderer.sprite == m_Sprite){
     		m_SpriteRenderer.sprite = original_Sprite;

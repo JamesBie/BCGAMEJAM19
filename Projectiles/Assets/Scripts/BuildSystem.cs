@@ -52,7 +52,7 @@ public class BuildSystem : MonoBehaviour
     private void Update()
     {
         //if E key pressed, toggle build mode
-        if(Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e"))
         {
             //flip bool
             buildModeOn = !buildModeOn;
@@ -80,13 +80,15 @@ public class BuildSystem : MonoBehaviour
                 blockTemplate = new GameObject("Solar Panel");
                 //add and store reference to a SpriteRenderer on the template object
                 currentRend = blockTemplate.AddComponent<SpriteRenderer>();
+                blockTemplate.AddComponent<RotatePanel>();
                 //sorting order of template is 10
                 currentRend.sortingOrder = 10;
                 //set the sprite of the template object to match current block type
                 currentRend.sprite = currentBlock.blockSprite;
+
+               
             }
         }
-
 
 
         if (buildModeOn && blockTemplate != null)
@@ -153,6 +155,7 @@ public class BuildSystem : MonoBehaviour
             {
                 GameObject newBlock = new GameObject(currentBlock.blockName);
                 newBlock.transform.position = blockTemplate.transform.position;
+                newBlock.transform.rotation = blockTemplate.transform.rotation;
                 SpriteRenderer newRend = newBlock.AddComponent<SpriteRenderer>();
 				newBlock.AddComponent<WallHp>();
                 newRend.sprite = currentBlock.blockSprite;

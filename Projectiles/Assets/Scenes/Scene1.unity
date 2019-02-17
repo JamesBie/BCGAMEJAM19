@@ -373,6 +373,38 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1204629164081890195}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &909505442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6800214610867607140, guid: 784f1ca6b74a20740a5657ddea737e0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1561323355708100540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &909505444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1563183587078071188, guid: 784f1ca6b74a20740a5657ddea737e0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1561323355708100540}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909505442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &909505445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909505442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc4cf01b3aea4caa84cb09c9c4bd0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: {fileID: 0}
 --- !u!1001 &1290666540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -504,6 +536,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1783593333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6518624300264722508, guid: 784f1ca6b74a20740a5657ddea737e0d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1561323355708100540}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1783593334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783593333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc4cf01b3aea4caa84cb09c9c4bd0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: {fileID: 909505444}
 --- !u!1001 &1204629164081890195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -658,6 +710,31 @@ PrefabInstance:
     - target: {fileID: 1561323354468998840, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932636293929273353, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932636293929273353, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932636293929273353, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695013515267407222, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4695013515267407222, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

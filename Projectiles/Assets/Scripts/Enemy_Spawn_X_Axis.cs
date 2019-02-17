@@ -6,15 +6,12 @@ public class Enemy_Spawn_X_Axis : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject enemy;
-    float randX;
-    Vector2 whereToSpawn;
-    public float spawnRate = 2f;
+    float randX, randY;
+    Vector3 whereToSpawn;
+    public float spawnRate = 1f;
     float nextSpawn = 0.0f;
-
-    void Start()
-    {
-
-    }
+	public Camera cam;
+	
 
     // Update is called once per frame
     void Update()
@@ -22,9 +19,14 @@ public class Enemy_Spawn_X_Axis : MonoBehaviour
         if (Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            randX = Random.Range(-5f, 5f);
-            whereToSpawn = new Vector2(randX, transform.position.y);
+            randX = Random.Range(0, 2.0f);
+			randY = Random.Range(0, 2);
+            whereToSpawn = cam.ViewportToWorldPoint(new Vector3(randX, randY, cam.nearClipPlane));
             Instantiate(enemy, whereToSpawn, Quaternion.identity);
-        }
+			spawnRate -= 0.001f;
+			if (spawnRate < 0.1){
+				spawnRate = 0.1f;
+			}
+		}
     }
 }

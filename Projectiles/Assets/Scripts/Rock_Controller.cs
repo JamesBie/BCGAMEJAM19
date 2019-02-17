@@ -11,7 +11,7 @@ public class Rock_Controller : MonoBehaviour
     void Start()
     {
         randX = Random.Range(-0.1f, 0.1f);
-        randY = Random.Range(0, 0.15f);
+        randY = Random.Range(-0.15f, 0.15f);
         rb = GetComponent< Rigidbody2D > ();
         //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }

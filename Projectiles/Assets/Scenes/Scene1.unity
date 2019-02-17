@@ -277,8 +277,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efe9e66c8da0024188ffa9cdd79f4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectToPlace: {fileID: 0}
-  maxBuildDistance: 8
+  playerObject: {fileID: 1311101183}
+  ObjectToPlace: {fileID: 17314484310883455, guid: 6c86e799b92f100438a02278dff15c0a,
+    type: 3}
+  maxBuildDistance: 15
   turretspacing: 3
 --- !u!1 &189489815
 GameObject:
@@ -2001,7 +2003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1204629163547110133, guid: 907df1f86fa8ad746b23cd6fd6745b92, type: 3}
-  spawnRate: 2
+  spawnRate: 0.5
+  cam: {fileID: 519420031}
 --- !u!4 &1723852990
 Transform:
   m_ObjectHideFlags: 0
@@ -2595,6 +2598,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: eebf0267fdbca4405ad14bc6a7adcf3f,
         type: 3}
+    - target: {fileID: 1561323354468998844, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561323354468998844, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: max_speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1561323354468998846, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -2849,6 +2862,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561323354468998845, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561323354468998845, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784f1ca6b74a20740a5657ddea737e0d, type: 3}

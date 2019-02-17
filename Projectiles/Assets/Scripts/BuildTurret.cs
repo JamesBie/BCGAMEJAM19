@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BuildTurret : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class BuildTurret : MonoBehaviour
     private bool buildBlocked = false;
 	
 	//reference to the player object
-    GameObject playerObject; //This is player
+    public GameObject playerObject; //This is player
 	public GameObject ObjectToPlace; //This is the Game Object we want to place down
 	
 	//
@@ -22,13 +23,10 @@ public class BuildTurret : MonoBehaviour
 	public int turretspacing; //radius of area around turrets where another object cannot be turret spacing has to be less than max build distance
 	//array of colliders
 	private Collider2D[] Overlaps;
-	private Vector2 newPos;
-	private GameObject newTurret;
+	
 	
     void Awake()
     {
-        //find player and store reference
-        playerObject = GameObject.Find("Player");
 		
     }
 	
@@ -42,7 +40,7 @@ public class BuildTurret : MonoBehaviour
             buildModeOn = !buildModeOn;
 		}
 		if(buildModeOn && Input.GetMouseButtonDown(0)){
-			Debug.Log("mouse button down");
+			//Debug.Log("mouse button down");
 			//if build mode is on and player clicks mouse button, we test area for if we can place the block or not
             //First find out x and y coordinates of mouse
             float newPosX = Mathf.Round(Camera.main.ScreenToWorldPoint(Input.mousePosition).x);
@@ -50,17 +48,18 @@ public class BuildTurret : MonoBehaviour
 			Debug.Log("mouse position"+newPosX+newPosY);
 			
 			//newpos - we create a 2D vector to record the position
-			Vector2 newpos = new Vector2(newPosX+playerObject.transform.position.x, newPosY+playerObject.transform.position.x);
+			Vector2 newPos = new Vector2(newPosX, newPosY);
 			
 			//basically we can't build turrets too close to any objects at all
-			Overlaps=Physics2D.OverlapCircleAll(newpos,turretspacing); //NEED TO DO: FIGURE OUT LAYER MASKS
-			Debug.Log("over lap length "+Overlaps.Length);
-			//AND if the distance between the player object and the new position is less than maxBuildDistance
+			Overlaps=Physics2D.OverlapCircleAll(newPos,turretspacing,0,-1,1); //NEED TO DO: FIGURE OUT LAYER MASKS
+			Debug.Log("playerpos"+playerObject.transform.position);
+			Debug.Log("distance "+Math.Sqrt((newPosX-playerObject.transform.position.x)*(newPosX-playerObject.transform.position.x)+((newPosY-playerObject.transform.position.y)*(newPosY-playerObject.transform.position.y))) );
 			
-			if (Overlaps.Length<1 && Vector2.Distance(playerObject.transform.position, newTurret.transform.position) <= maxBuildDistance)
+			//AND if the distance between the player object and the new position is less than maxBuildDistance
+			if (Overlaps.Length<1 && Math.Sqrt((newPosX-playerObject.transform.position.x)*(newPosX-playerObject.transform.position.x)+((newPosY-playerObject.transform.position.y)*(newPosY-playerObject.transform.position.y)))  <= maxBuildDistance)
 			{
 				Instantiate(ObjectToPlace,newPos,playerObject.transform.rotation);
-				Debug.Log("created");
+				Debug.Log("created at " + newPos);
 			}				
         }
     }

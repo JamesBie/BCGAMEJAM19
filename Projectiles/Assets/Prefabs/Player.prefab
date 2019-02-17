@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 1561323354468998844}
   - component: {fileID: 1561323354468998846}
   - component: {fileID: 1561323354468998841}
+  - component: {fileID: 7578989764876006967}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -416,6 +417,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laser: {fileID: 5675756156104258563, guid: 85d73cd6cdc4e6844bdad0d568560e22, type: 3}
   fireInterval: 1
+--- !u!114 &7578989764876006967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561323354468998979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc4cf01b3aea4caa84cb09c9c4bd0b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+  currentHealth: {fileID: 0}
 --- !u!1 &2602006813223434707
 GameObject:
   m_ObjectHideFlags: 0

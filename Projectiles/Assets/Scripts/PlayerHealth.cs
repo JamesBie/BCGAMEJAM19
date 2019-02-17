@@ -14,14 +14,13 @@ public class PlayerHealth : MonoBehaviour
 
 	void Awake(){
 		
-
-currentHealth.value = startingHealth;
 	}
 
     // Start is called before the first frame update
     void Start()
     {
-    	
+    	currentHealth = GameObject.Find("HealthBar").GetComponent<Slider>();
+    	currentHealth.value = startingHealth;
     }
 
     // Update is called once per frame

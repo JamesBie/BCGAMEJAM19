@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 69587892}
   - component: {fileID: 69587894}
   - component: {fileID: 69587893}
+  - component: {fileID: 69587895}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -235,7 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294c0da9d5738a74d87c83e7c309e7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockTemplate: {fileID: 0}
+  blockTemplate: {fileID: 1007094397147882337, guid: 803a0b1f1909cd948b171ece7ea69df4,
+    type: 3}
   blockSizeMod: 1
   solidNoBuildLayer:
     serializedVersion: 2
@@ -243,7 +245,9 @@ MonoBehaviour:
   allBlocksLayer:
     serializedVersion: 2
     m_Bits: 1024
-  playerObject: {fileID: 0}
+  playerObject: {fileID: 1007094397147882337, guid: 803a0b1f1909cd948b171ece7ea69df4,
+    type: 3}
+  ObjecttoPlace: {fileID: 0}
   maxBuildDistance: 4
 --- !u!114 &69587894
 MonoBehaviour:
@@ -261,6 +265,21 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1be4325f3228a544886c9010507166c2, type: 3}
   solidNames:
   - Solar Panel
+--- !u!114 &69587895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69587891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efe9e66c8da0024188ffa9cdd79f4c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectToPlace: {fileID: 0}
+  maxBuildDistance: 8
+  turretspacing: 3
 --- !u!1 &189489815
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,21 +7,18 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
 
+
 	public float startingHealth = 100;
 	public Slider currentHealth;
-
-	//bool damaged= false;
+	void Awake(){
 	
-	
-	void Awake(){ //Commentating out for now bc idk what this is
-		currentHealth.value = startingHealth;
 	}
 	
-
     // Start is called before the first frame update
     void Start()
     {
-        
+    	currentHealth = GameObject.Find("HealthBar").GetComponent<Slider>();
+    	currentHealth.value = startingHealth;
     }
 
     // Update is called once per frame
@@ -29,15 +26,16 @@ public class PlayerHealth : MonoBehaviour
     {
 
     	//change logic to players health when time is right
-    	if (Input.GetKeyDown (KeyCode.A)){
+    	if (Input.GetKeyDown (KeyCode.A) && currentHealth.value < 100){
     		currentHealth.value += 10;
     	}
 
-    	if (Input.GetKeyDown (KeyCode.S)){
+    	if (Input.GetKeyDown (KeyCode.S) && currentHealth.value >0){
     		currentHealth.value -= 10;
     	}
         
     }
+
 
 	void OnTriggerEnter(Collider other) //other is the other collider that we touch
 	{
@@ -51,4 +49,5 @@ public class PlayerHealth : MonoBehaviour
 			}
 		}
     }
+
 }

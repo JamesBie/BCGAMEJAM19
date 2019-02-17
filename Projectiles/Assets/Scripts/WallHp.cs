@@ -12,6 +12,7 @@ public class WallHp : MonoBehaviour
 			health -= 1;
 			if (health <=0){ //When HP is 0, destroy current wall
 				Destroy(gameObject);
+				Debug.Log("WallDed");
 			}
 		}
 	}

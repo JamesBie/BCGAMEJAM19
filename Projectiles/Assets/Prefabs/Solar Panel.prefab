@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3005321635111972293}
   - component: {fileID: 227236172613288374}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Solar Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007094397147882337}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.17, y: 0.13, z: 0}
+  m_LocalPosition: {x: -8.87, y: -3.38, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,4 +119,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5153f33d810c974da3f3801708f1962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5

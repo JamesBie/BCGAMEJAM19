@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class WallHp : MonoBehaviour
 {
-	public int health = 5;
-	void OnTriggerEnter(Collider other) //other is the other collider that we touch
+	/*
+	Solar Panel HP decreases when hit until it gets destroyed
+	
+	
+	*/
+	int health = 2;
+	void OnTriggerEnter2D(Collider2D other) //other is the other collider that we touch
 	{
 		if (other.gameObject.CompareTag("Rock")){ //Tag is defined in Unity
 			Destroy(other.gameObject);//destroy meteor

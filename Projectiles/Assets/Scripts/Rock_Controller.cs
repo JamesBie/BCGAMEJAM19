@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class Rock_Controller : MonoBehaviour
 {
-    public float speed;
-    float rand;
-    private Transform target;
-    float pos;
+    float randX;
+    float randY;
+    private Rigidbody2D rb;
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        randX = Random.Range(-0.1f, 0.1f);
+        randY = Random.Range(0, 0.15f);
+        rb = GetComponent< Rigidbody2D > ();
+        //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        rand = Random.Range(-3f, 3f);
-        transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        Vector2 pos = rb.position;
+        rb.velocity = new Vector2(randX, randY);
+        pos += rb.velocity;
+        rb.position = pos;
     }
 }

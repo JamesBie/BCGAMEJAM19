@@ -121,8 +121,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 69587892}
+  - component: {fileID: 69587894}
+  - component: {fileID: 69587893}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,6 +144,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &69587893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69587891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294c0da9d5738a74d87c83e7c309e7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockTemplate: {fileID: 0}
+  blockSizeMod: 1
+  solidNoBuildLayer:
+    serializedVersion: 2
+    m_Bits: 288
+  allBlocksLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  playerObject: {fileID: 0}
+  maxBuildDistance: 4
+--- !u!114 &69587894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69587891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc98bf01152e394f9e84291135ce9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solidBlocks:
+  - {fileID: 21300000, guid: 1be4325f3228a544886c9010507166c2, type: 3}
+  solidNames:
+  - Solar Panel
 --- !u!1 &156813723
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,18 +419,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1561323355708100540}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &909505444 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1563183587078071188, guid: 784f1ca6b74a20740a5657ddea737e0d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1561323355708100540}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909505442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &909505445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,6 +444,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204629163547110133, guid: 907df1f86fa8ad746b23cd6fd6745b92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1204629163547110137, guid: 907df1f86fa8ad746b23cd6fd6745b92,
         type: 3}
@@ -536,26 +569,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1783593333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6518624300264722508, guid: 784f1ca6b74a20740a5657ddea737e0d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1561323355708100540}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1783593334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783593333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc4cf01b3aea4caa84cb09c9c4bd0b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 100
-  currentHealth: {fileID: 909505444}
 --- !u!1001 &1204629164081890195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -567,6 +580,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rock1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204629163547110133, guid: 907df1f86fa8ad746b23cd6fd6745b92,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1204629163547110137, guid: 907df1f86fa8ad746b23cd6fd6745b92,
         type: 3}
@@ -656,6 +674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561323354468998979, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1561323354468998840, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}

@@ -7,7 +7,7 @@ public class Rock_Controller : MonoBehaviour
     float randX;
     float randY;
     private Rigidbody2D rb;
-
+	float timer=10f;
     void Start()
     {
         randX = Random.Range(-0.1f, 0.1f);
@@ -23,5 +23,10 @@ public class Rock_Controller : MonoBehaviour
         rb.velocity = new Vector2(randX, randY);
         pos += rb.velocity;
         rb.position = pos;
+		timer-=Time.deltaTime;
+		if (timer<=0){
+			Destroy(gameObject);
+		}
+		
     }
 }

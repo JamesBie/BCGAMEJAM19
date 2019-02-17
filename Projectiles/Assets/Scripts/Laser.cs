@@ -9,7 +9,7 @@ public class Laser : MonoBehaviour
 		Once it hits something that is a enermy, it is destroyed
 	*/
 	public float speed;
-	public float timer=90f;
+	public float timer=10f;
     // Update is called once per frame
     void Update()
     {

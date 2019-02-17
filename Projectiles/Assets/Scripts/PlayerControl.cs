@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour
 		
 		if (Input.GetKey (KeyCode.W) || Input.GetKey("up")){
     		m_SpriteRenderer.sprite =m_Sprite;
+			Debug.Log("inputkey up");
     	}else if(m_SpriteRenderer.sprite == m_Sprite){
     		m_SpriteRenderer.sprite = original_Sprite;
     	}

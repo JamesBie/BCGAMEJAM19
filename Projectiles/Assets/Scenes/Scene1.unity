@@ -280,6 +280,7 @@ MonoBehaviour:
   playerObject: {fileID: 1311101183}
   ObjectToPlace: {fileID: 17314484310883455, guid: 6c86e799b92f100438a02278dff15c0a,
     type: 3}
+
   ModeText: {fileID: 935749506}
   maxBuildDistance: 8
   turretspacing: 3

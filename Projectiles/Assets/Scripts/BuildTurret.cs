@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+
 
 public class BuildTurret : MonoBehaviour
 {
@@ -18,7 +20,9 @@ public class BuildTurret : MonoBehaviour
     public GameObject playerObject; //This is player
 	public GameObject ObjectToPlace; //This is the Game Object we want to place down
 	
-	//
+	// Text on screen that indicates if turret build mode is on
+	public Text ModeText;
+	
 	public int maxBuildDistance; //This is the maximum build distance away from the ship
 	public int turretspacing; //radius of area around turrets where another object cannot be turret spacing has to be less than max build distance
 	//array of colliders
@@ -27,7 +31,7 @@ public class BuildTurret : MonoBehaviour
 	
     void Awake()
     {
-		
+		ModeText.text="";
     }
 	
 	private void Update()
@@ -38,6 +42,12 @@ public class BuildTurret : MonoBehaviour
 			Debug.Log("build mode on");
             //flip bool
             buildModeOn = !buildModeOn;
+			if (buildModeOn){
+				ModeText.text="Turret Build Mode On";
+			}
+			else {
+				ModeText.text="";
+			}
 		}
 		if(buildModeOn && Input.GetMouseButtonDown(0)){
 			//Debug.Log("mouse button down");
@@ -52,14 +62,14 @@ public class BuildTurret : MonoBehaviour
 			
 			//basically we can't build turrets too close to any objects at all
 			Overlaps=Physics2D.OverlapCircleAll(newPos,turretspacing,0,-1,1); //NEED TO DO: FIGURE OUT LAYER MASKS
-			Debug.Log("playerpos"+playerObject.transform.position);
-			Debug.Log("distance "+Math.Sqrt((newPosX-playerObject.transform.position.x)*(newPosX-playerObject.transform.position.x)+((newPosY-playerObject.transform.position.y)*(newPosY-playerObject.transform.position.y))) );
+			//Debug.Log("playerpos"+playerObject.transform.position);
+			//Debug.Log("distance "+Math.Sqrt((newPosX-playerObject.transform.position.x)*(newPosX-playerObject.transform.position.x)+((newPosY-playerObject.transform.position.y)*(newPosY-playerObject.transform.position.y))) );
 			
 			//AND if the distance between the player object and the new position is less than maxBuildDistance
 			if (Overlaps.Length<1 && Math.Sqrt((newPosX-playerObject.transform.position.x)*(newPosX-playerObject.transform.position.x)+((newPosY-playerObject.transform.position.y)*(newPosY-playerObject.transform.position.y)))  <= maxBuildDistance)
 			{
 				Instantiate(ObjectToPlace,newPos,playerObject.transform.rotation);
-				Debug.Log("created at " + newPos);
+				//Debug.Log("created at " + newPos);
 			}				
         }
     }

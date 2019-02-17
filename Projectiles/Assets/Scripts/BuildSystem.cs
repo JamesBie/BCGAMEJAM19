@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildSystem : MonoBehaviour
 {
+
     //reference to the BlockSystem script
     private BlockSystem blockSys;
 
@@ -76,7 +77,7 @@ public class BuildSystem : MonoBehaviour
             if (buildModeOn)
             {
                 //create new object for blockTemplate
-                blockTemplate = new GameObject("CurrentBlockTemplate");
+                blockTemplate = new GameObject("Solar Panel");
                 //add and store reference to a SpriteRenderer on the template object
                 currentRend = blockTemplate.AddComponent<SpriteRenderer>();
                 //sorting order of template is 10
@@ -154,6 +155,7 @@ public class BuildSystem : MonoBehaviour
                 newBlock.transform.position = blockTemplate.transform.position;
                 SpriteRenderer newRend = newBlock.AddComponent<SpriteRenderer>();
                 newRend.sprite = currentBlock.blockSprite;
+				newBlock.tag="Panel";
 
                 if (currentBlock.isSolid == true)
                 {

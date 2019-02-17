@@ -154,6 +154,7 @@ public class BuildSystem : MonoBehaviour
                 GameObject newBlock = new GameObject(currentBlock.blockName);
                 newBlock.transform.position = blockTemplate.transform.position;
                 SpriteRenderer newRend = newBlock.AddComponent<SpriteRenderer>();
+				newBlock.AddComponent<WallHp>();
                 newRend.sprite = currentBlock.blockSprite;
 				newBlock.tag="Panel";
 

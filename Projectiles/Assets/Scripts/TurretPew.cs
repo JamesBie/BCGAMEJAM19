@@ -67,7 +67,6 @@ public class TurretPew : MonoBehaviour
 			Vector3 direction= target.position- transform.position; //Records the vector between turret and target
 			float angle = Mathf.Atan2(-direction.x,direction.y) * Mathf.Rad2Deg; //use tangent to find angle subtended by (x,y)
 			transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));//Turn this into an angle rotation in z axis
-            FindObjectOfType<AudioManager>().Play("tshoot");
 			Instantiate(laser,transform.position,transform.rotation); //creates copy of gameobject prefab at position with orientation
 			cooldownTimer=FireInterval; //reset cooldown timer
 	    }

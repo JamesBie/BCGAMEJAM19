@@ -1154,7 +1154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1204629163547110133, guid: 907df1f86fa8ad746b23cd6fd6745b92, type: 3}
-  spawnRate: 2
+  spawnRate: 0.5
+  cam: {fileID: 519420031}
 --- !u!4 &1723852990
 Transform:
   m_ObjectHideFlags: 0
@@ -1675,6 +1676,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: eebf0267fdbca4405ad14bc6a7adcf3f,
         type: 3}
+    - target: {fileID: 1561323354468998844, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: max_speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561323354468998844, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1561323354468998846, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -1914,6 +1925,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: -29.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561323354468998845, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561323354468998845, guid: 784f1ca6b74a20740a5657ddea737e0d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784f1ca6b74a20740a5657ddea737e0d, type: 3}

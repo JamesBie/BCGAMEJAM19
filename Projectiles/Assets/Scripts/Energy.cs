@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Energy : MonoBehaviour
 {
@@ -9,10 +11,11 @@ public class Energy : MonoBehaviour
     float energyLoss;//Amount of energy lost
     float next_gain = 0f; //Time
     public float energyRate = 1.0f; //Rate at which energy is either gained or lost
-
+	public Slider EnergyBar;
     void Start()
     {
-        energy = 100;
+        EnergyBar.value = 100;
+		
     }
 
     // Update is called once per frame
@@ -22,8 +25,8 @@ public class Energy : MonoBehaviour
         float number_of_panels = GameObject.FindGameObjectsWithTag("Panel").Length;
         float number_of_turrets = GameObject.FindGameObjectsWithTag("Turret").Length;
         //Complicated calculations
-        energyGain = 2.0f * (number_of_panels);
-        energyLoss = 3.0f * (number_of_turrets);
+        energyGain = 1.0f * (number_of_panels);
+        energyLoss = 2.0f * (number_of_turrets);
 
         if (Time.time>next_gain){
             //Calculate next time interval to be reached
@@ -31,15 +34,16 @@ public class Energy : MonoBehaviour
 
         //Energy is gained
 
-            energy = energy + energyGain - energyLoss;
+            EnergyBar.value = EnergyBar.value + energyGain - energyLoss;
 
-            //if set minimun energy to zero
-            if (energy < 0)
+            //once energy gets to zero
+            if (EnergyBar.value <= 0)
             {
-                energy = 0;
+				//Trigger Game over
+				SceneManager.LoadSceneAsync(2);
             }
             Debug.Log("Current gain: " + energyGain);
-            Debug.Log("Current energy: " + energy);
+            Debug.Log("Current energy: " + EnergyBar.value);
         
 		}
 

@@ -171,7 +171,7 @@ public class BuildSystem : MonoBehaviour
 
                 if (destroyHit.collider != null)
                 {
-                    Destroy(destroyHit.collider.gameObject);
+//Destroy(destroyHit.collider.gameObject);
                 }
             }
         }

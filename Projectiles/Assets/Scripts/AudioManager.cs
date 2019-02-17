@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
     {
         Play("Theme");
     }
+
     public void Play (string name)
     {
 
@@ -44,5 +45,4 @@ public class AudioManager : MonoBehaviour
    
         s.source.Play();
     }
-    
 }

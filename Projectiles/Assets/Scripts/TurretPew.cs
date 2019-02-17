@@ -10,20 +10,21 @@ public class TurretPew : MonoBehaviour
 	It rotates towards the target and shoots a laser
 	*/
     public GameObject laser;
-	public float FireInterval = 2.5f; //Time in between shoot
-	public Transform target; //can make this private later on
+	public float FireInterval = 0.5f; //Time in between shoot
+	public Collider2D target; //can make this private later on
 	public float range = 5.0f; //range of the turret
 	public string enemyTag;   // in unity change this tag to Astroid
 	
 	
 	float cooldownTimer=0;
-	
+	Rigidbody2D rb;
 	
     // Start is called before the first frame update
     void Start()
     { 
 	InvokeRepeating("UpdateTarget",0f,0.5f); //2 times a second
     }
+	
 	void UpdateTarget(){ //Search in range- find the closest target
 		//Debug.Log("UpdateTarget running");
 		//will check on a fixed basis - 2 times a second
@@ -50,7 +51,7 @@ public class TurretPew : MonoBehaviour
 			if (bestCollider != null){
 				//Debug.Log("target changed");
 			//update target to be enemy
-				target= bestCollider.transform;
+				target= bestCollider;
 			}
 			else {
 				target= null;
@@ -64,7 +65,11 @@ public class TurretPew : MonoBehaviour
 		if (target!=null && cooldownTimer <=0){ //When there exists a target and the cooldownTimer as reached 0, turret rotates and shoots laser
 		   
 			//Debug.Log("release laser");
-			Vector3 direction= target.position- transform.position; //Records the vector between turret and target
+			Vector2 prediction= 2*target.attachedRigidbody.velocity; //find current linear velocity of target	
+			
+			Vector3 direction= target.transform.position- transform.position; //Records the vector between turret and target
+			//Add prediction to vector
+			direction=new Vector3(direction.x+prediction.x,direction.y+prediction.y,0.0f);
 			float angle = Mathf.Atan2(-direction.x,direction.y) * Mathf.Rad2Deg; //use tangent to find angle subtended by (x,y)
 			transform.rotation = Quaternion.Euler(new Vector3(0,0,angle));//Turn this into an angle rotation in z axis
 			Instantiate(laser,transform.position,transform.rotation); //creates copy of gameobject prefab at position with orientation

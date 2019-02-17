@@ -35,7 +35,7 @@ public class BuildSystem : MonoBehaviour
 
     //reference to the player object
     public GameObject playerObject;
-
+	public GameObject ObjecttoPlace;
     [SerializeField]
     private float maxBuildDistance;
 

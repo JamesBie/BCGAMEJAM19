@@ -20,6 +20,7 @@ public class pewpew : MonoBehaviour
 	   if (Input.GetButton("Fire1") && cooldownTimer <=0){ //Fire1 is space, when hold down space and timer reaches 0
 		   cooldownTimer=fireInterval;
 		   Debug.Log("release laser");
+            FindObjectOfType<AudioManager>().Play("pshoot");
 		   Instantiate(laser,transform.position,transform.rotation); //creates copy of gameobject prefab at position with orientation
 	   }
     }

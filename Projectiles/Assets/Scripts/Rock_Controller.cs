@@ -7,11 +7,11 @@ public class Rock_Controller : MonoBehaviour
     float randX;
     float randY;
     private Rigidbody2D rb;
-
+	float timer=10f;
     void Start()
     {
         randX = Random.Range(-0.1f, 0.1f);
-        randY = Random.Range(0, 0.15f);
+        randY = Random.Range(-0.15f, 0.15f);
         rb = GetComponent< Rigidbody2D > ();
         //target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
@@ -23,5 +23,10 @@ public class Rock_Controller : MonoBehaviour
         rb.velocity = new Vector2(randX, randY);
         pos += rb.velocity;
         rb.position = pos;
+		timer-=Time.deltaTime;
+		if (timer<=0){
+			Destroy(gameObject);
+		}
+		
     }
 }

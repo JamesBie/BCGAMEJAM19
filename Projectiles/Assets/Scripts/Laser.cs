@@ -9,7 +9,7 @@ public class Laser : MonoBehaviour
 		Once it hits something that is a enermy, it is destroyed
 	*/
 	public float speed;
-	public float timer=90f;
+	public float timer=10f;
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +29,7 @@ public class Laser : MonoBehaviour
 	
 		//Destroy(other.gameObject); This destroys the other game object, its assets and all of its children
 		if (other.gameObject.CompareTag("Rock")){ //Tag is defined in Unity <-------------------------------------
-			Debug.Log("rock + laser trigger");
+			//Debug.Log("rock + laser trigger");
 			Destroy(other.gameObject);//destroy rock
 			Destroy(gameObject); //Also destroy laser
 			

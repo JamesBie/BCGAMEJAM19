@@ -10,11 +10,17 @@ public class PlayerControl : MonoBehaviour
 	public float max_speed = 3.5f;
     public float rot_speed = 180f;
 
+
 	private Rigidbody2D rb2d;
+	SpriteRenderer m_SpriteRenderer;
+	public Sprite m_Sprite;
+	private Sprite original_Sprite;
     // Start is called before the first frame update
     void Start()
     {
         rb2d=GetComponent<Rigidbody2D>();
+        m_SpriteRenderer = GetComponent <SpriteRenderer>();
+        original_Sprite = m_SpriteRenderer.sprite;
     }
 
 	void FixedUpdate() { //just before performing any physics calulations
@@ -27,7 +33,12 @@ public class PlayerControl : MonoBehaviour
         rb2d.AddForce(movement * max_speed);
 		*/
 		
-		
+		if (Input.GetKey (KeyCode.W) || Input.GetKey("up")){
+    		m_SpriteRenderer.sprite =m_Sprite;
+			Debug.Log("inputkey up");
+    	}else if(m_SpriteRenderer.sprite == m_Sprite){
+    		m_SpriteRenderer.sprite = original_Sprite;
+    	}
 		/*
 		Quaternion rot = transform.rotation;
 		float z= rot.eulerAngles.z;
@@ -49,14 +60,12 @@ public class PlayerControl : MonoBehaviour
 		if (rb2d.angularVelocity < 35.0&&rb2d.angularVelocity>-35.0){
 			rb2d.AddTorque(rotate*-1);
 		}
-		//void OnTriggerEnter(Collider other) //other is the other collider that we touch
-	//{
-		//Destroy(other.gameObject); //This destroys the other game object, its assets and all of its children
-		/*if (other.gameObject.CompareTag("Pick Up")){ //Tag is defined in Unity
-			
-			other.gameObject.SetActive(false);//deactivate pickup object
-			
-		}*/
-   // }
-	}
+		
+    }
+	/*void OnTriggerEnter2D(Collider2D other) //other is the other collider that we touch
+	{
+		if (other.gameObject.CompareTag("Rock")){ //Tag is defined in Unity
+			Destroy(other.gameObject);
+		}
+    }*/
 }

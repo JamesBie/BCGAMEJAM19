@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rock
+  - Turret
   layers:
   - Default
   - TransparentFX

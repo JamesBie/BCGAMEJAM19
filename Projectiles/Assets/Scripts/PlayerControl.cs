@@ -10,11 +10,17 @@ public class PlayerControl : MonoBehaviour
 	public float max_speed = 3.5f;
     public float rot_speed = 180f;
 
+
 	private Rigidbody2D rb2d;
+	SpriteRenderer m_SpriteRenderer;
+	public Sprite m_Sprite;
+	private Sprite original_Sprite;
     // Start is called before the first frame update
     void Start()
     {
         rb2d=GetComponent<Rigidbody2D>();
+        m_SpriteRenderer = GetComponent <SpriteRenderer>();
+        original_Sprite = m_SpriteRenderer.sprite;
     }
 
 	void FixedUpdate() { //just before performing any physics calulations
@@ -27,7 +33,11 @@ public class PlayerControl : MonoBehaviour
         rb2d.AddForce(movement * max_speed);
 		*/
 		
-		
+		if (Input.GetKey (KeyCode.W)){
+    		m_SpriteRenderer.sprite =m_Sprite;
+    	}else if(m_SpriteRenderer.sprite == m_Sprite){
+    		m_SpriteRenderer.sprite = original_Sprite;
+    	}
 		/*
 		Quaternion rot = transform.rotation;
 		float z= rot.eulerAngles.z;

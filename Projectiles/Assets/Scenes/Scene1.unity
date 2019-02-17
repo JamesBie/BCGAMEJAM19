@@ -280,6 +280,7 @@ MonoBehaviour:
   playerObject: {fileID: 1311101183}
   ObjectToPlace: {fileID: 17314484310883455, guid: 6c86e799b92f100438a02278dff15c0a,
     type: 3}
+  ModeText: {fileID: 0}
   maxBuildDistance: 15
   turretspacing: 3
 --- !u!1 &189489815
@@ -2078,7 +2079,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783442540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

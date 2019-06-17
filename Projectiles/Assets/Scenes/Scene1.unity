@@ -3294,6 +3294,7 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1561323354468998844, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}
+
       propertyPath: speed
       value: 7
       objectReference: {fileID: 0}
@@ -3542,6 +3543,7 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -29.42
       objectReference: {fileID: 0}
+
     - target: {fileID: 8932636293929273353, guid: 784f1ca6b74a20740a5657ddea737e0d,
         type: 3}
       propertyPath: m_AnchorMin.x
